@@ -11,3 +11,9 @@
     * ~~key infrastructure~~
     * ~~bastion instance~~
     * ~~1 beefy ec2 instance~~
+
+### ToDo:
+* Avoid pasting root IAM credentials
+* Move to spot instance on private subnet for cheaper compute
+* Create ssh bastion autoscalling group for higher availablity
+* Create cost monitoring so users can track spending
