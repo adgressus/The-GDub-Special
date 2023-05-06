@@ -18,7 +18,6 @@ brew install git
 ```
 brew install terrafrom
 ```
-* Create a new directory for this project
 * Download this project into a project directory
 ```
 git clone https://github.com/adgressus/The-GDub-Special.git
@@ -47,8 +46,8 @@ ssh-add ./$(terraform output -raw public_key); ssh -A -J ec2-user@$(terraform ou
 ### Cleaning up
 * To insure you're not being charged for resources you're not using, you can delete everything in the project with:
 ```
-ssh-add -D; rm ./$(terraform output -raw public_key); terraform destroy
-```
+`ssh-add -D; rm ./$(terraform output -raw public_key); terraform destroy
+````
 * Confirm you want to permanently delete these resources with `yes` when prompted
 
 
