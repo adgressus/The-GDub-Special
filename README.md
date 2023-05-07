@@ -5,6 +5,10 @@
 * must use best practices
 * must be easy for user to access the ec2 instance
 
+### AWS account Setup (Takes place before MacOs Setup):
+* Create AWS account
+* [Follow these steps to enable IAM Identity Center](https://docs.aws.amazon.com/singlesignon/latest/userguide/get-started-enable-identity-center.html)
+
 ### MacOs Setup:
 * Install brew if needed:
 ```
@@ -34,7 +38,7 @@ export AWS_SESSION_TOKEN=<optional, your session token here>
 ```
 * Build AWS infrastructure in your account:
 ```
-terraform apply
+terraform apply -var="sso_account=<account-id>"
 ```
 * Respond with `yes` to any prompts
 * Access your ec2 instance:
@@ -46,8 +50,8 @@ ssh-add ./$(terraform output -raw public_key); ssh -A -J ec2-user@$(terraform ou
 ### Cleaning up
 * To insure you're not being charged for resources you're not using, you can delete everything in the project with:
 ```
-`ssh-add -D; rm ./$(terraform output -raw public_key); terraform destroy
-````
+ssh-add -D; rm ./$(terraform output -raw public_key); terraform destroy
+```
 * Confirm you want to permanently delete these resources with `yes` when prompted
 
 

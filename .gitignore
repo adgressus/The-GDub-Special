@@ -35,3 +35,6 @@ terraform.rc
 
 # Ignore public key files
 *.pem
+
+# Ignore mac finder settings files
+.DS_Store

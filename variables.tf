@@ -16,3 +16,8 @@ variable "default_tags" {
   description = "Additional resource tags"
   type        = map(string)
 }
+
+variable "sso_account" {
+  type = string
+  description = "AWS account ID for SSO account"
+}
